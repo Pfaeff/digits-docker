@@ -1,4 +1,4 @@
-FROM nvidia/cuda:9.0-devel-ubuntu16.04
+FROM nvidia/cuda:8.0-devel-ubuntu16.04
 
 # Install useful tools
 RUN apt-get update && apt-get install -y vim wget mlocate
