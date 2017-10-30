@@ -40,9 +40,14 @@ RUN pip install -r /var/digits/requirements.txt
 RUN pip install scikit-image
 
 # Build caffe
-RUN cd /var/ && git clone https://github.com/BVLC/caffe.git && git checkout tags/1.0
+RUN cd /var/ && git clone https://github.com/BVLC/caffe.git && cd caffe && git checkout tags/1.0
 COPY Makefile.config /var/caffe/
 RUN cd /var/caffe && make && make pycaffe
+
+# Setup directories
+RUN mkdir /data && mkdir /jobs 
+ENV DIGITS_JOBS_DIR /jobs
+#    ln -s /var/digits/digits/jobs /jobs
 
 # Run digits
 EXPOSE 5000
