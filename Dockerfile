@@ -14,7 +14,9 @@ RUN apt-get update && apt-get install -y \
     libsnappy-dev \ 
     libhdf5-serial-dev \ 
     protobuf-compiler \
-    libatlas-base-dev 
+    libatlas-base-dev \
+    libnccl2 \
+    libnccl-dev
 RUN apt-get update && apt-get install -y --no-install-recommends libboost-all-dev 
 RUN apt-get update && apt-get install -y \
     libgflags-dev \
